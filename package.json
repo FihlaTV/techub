@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "node-authentication",
   "main": "server.js",
   "dependencies": {
@@ -18,4 +19,24 @@
     "method-override": "~2.3.6",
     "express-session": "~1.14.1"
   }
+=======
+  "name": "techhub",
+  "version": "1.0.0",
+  "description": "A web app for tech service which lists all the local service providers who provide computer and other device maintenance and repair services",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satyampatro/techub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/satyampatro/techub/issues"
+  },
+  "homepage": "https://github.com/satyampatro/techub#readme"
+>>>>>>> f35e748b086196e0ee05ef82dc7b4e91ec3e854c
 }

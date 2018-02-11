@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // server.js
 
 // set up ======================================================================
@@ -48,3 +49,21 @@ app.use('/', router);
 // launch ======================================================================
 app.listen(port);
 console.log('The magic happens on port ' + port);
+=======
+var express = require('express');
+var morgan = require('morgan');
+var path = require('path');
+var config = require('./config');
+var router = require('./router.js'); //send traffic to this router
+
+var app = express();
+app.use(morgan('combined'));
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', router);
+
+
+app.listen(config.PORT_NUMBER, function () {
+  console.log(`app listening on port ${config.PORT_NUMBER}!`);
+});
+>>>>>>> f35e748b086196e0ee05ef82dc7b4e91ec3e854c
