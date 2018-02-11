@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-# Easy Node Authentication
-
-Code for the entire scotch.io tutorial series: Complete Guide to Node Authentication
-
-We will be using Passport to authenticate users locally, with Facebook, Twitter, and Google.
-
-#### Upgraded To Express 4.0
-This tutorial has been upgraded to use ExpressJS 4.0. See [the commit](https://github.com/scotch-io/easy-node-authentication/commit/020dea057d5a0664caaeb041b18978237528f9a3) for specific changes.
+# TechHub
+A web app for tech service which lists all the local service providers who provide computer and other device maintenance and repair services
 
 ## Instructions
 
@@ -19,14 +12,6 @@ If you would like to download the code and try it for yourself:
 5. Launch: `node server.js`
 6. Visit in your browser at: `http://localhost:8080`
 
-## The Tutorials
 
-- [Getting Started and Local Authentication](http://scotch.io/tutorials/easy-node-authentication-setup-and-local)
-- [Facebook](http://scotch.io/tutorials/easy-node-authentication-facebook)
-- [Twitter](http://scotch.io/tutorials/easy-node-authentication-twitter)
-- [Google](http://scotch.io/tutorials/easy-node-authentication-google)
-- [Linking All Accounts Together](http://scotch.io/tutorials/easy-node-authentication-linking-all-accounts-together)
-=======
-# TechHub
-A web app for tech service which lists all the local service providers who provide computer and other device maintenance and repair services
->>>>>>> f35e748b086196e0ee05ef82dc7b4e91ec3e854c
+
+
