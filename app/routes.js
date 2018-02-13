@@ -1,20 +1,36 @@
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
-
+   
     // show the home page (will also have our login links)
     app.get('/', function(req, res) {
         res.render('index.ejs');
     });
 
-    app.get('/dashboard', function(req, res) {
-        res.render('dashboard.ejs');
-    });
 
+
+    app.get('/dashboard', isLoggedIn, function(req, res) {
+        res.render('dashboard.ejs', {
+            user : req.user
+        });
+    });
+ 
 
     // PROFILE SECTION =========================
+    app.get('/user-profile', isLoggedIn, function(req, res) {
+        res.render('user-profile.ejs', {
+            user : req.user
+        });
+    });
+
     app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile.ejs', {
+            user : req.user
+        });
+    });
+  
+    app.get('/setting', isLoggedIn, function(req, res) {
+        res.render('setting.ejs', {
             user : req.user
         });
     });
@@ -25,6 +41,7 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
     
+
    
 
 // =============================================================================
@@ -162,6 +179,8 @@ module.exports = function(app, passport) {
             res.redirect('/profile');
         });
     });
+
+
 
     // facebook -------------------------------
     app.get('/unlink/facebook', isLoggedIn, function(req, res) {
