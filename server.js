@@ -14,7 +14,6 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
-var router = require('./router.js');
 var configDB = require('./config/database.js');
 
 // configuration ===============================================================
@@ -60,7 +59,7 @@ var app = express();
 app.use(morgan('combined'));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', router);
+
 
 
 app.listen(config.PORT_NUMBER, function () {
