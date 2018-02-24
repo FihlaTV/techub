@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>User profile form requirement</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+        <!-- Bootstrap Core CSS -->
+        <!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/public/assets/css/tag_box.css">
+            <script type="text/javascript" src="/public/vendors/jquery-2.0.3.min.js"></script>
+
+            <script type="text/javascript" src="/public/assets/js/tagbox.js"></script>
+            <script type="text/javascript" src="/public/assets/js/tag.js"></script>
+        <!-- Custom CSS -->
+        <style>
+            body {
+                padding-top: 20px;
+                /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+            }
+
+            .othertop {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 ">
+                    <form class="form-horizontal" accept-charset="UTF-8" action="/user-update/<%= user._id %>" method="post">
+                        <fieldset>
+                            <!-- Form Name -->
+                            <legend>User profile update</legend>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="Name (Full name)">Name</label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <input id="fullname" name="name" type="text" placeholder="Name (Full name)" class="form-control input-md" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- File Button -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="Upload photo">Upload photo</label>
+                                <div class="col-md-4">
+                                    <input id="Upload photo" name="profile_pic" class="input-file" type="file">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="Date Of Birth">Date Of Birth</label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-birthday-cake"></i>
+                                        </div>
+                                        <input id="date_of_birth" name="date_of_birth" type="date" placeholder="Date Of Birth" class="form-control input-md" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="Date Of Birth">Location</label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-location-arrow"></i>
+                                        </div>
+                                        <input id="location" name="location" type="text" placeholder="Location" class="form-control input-md">
+                                    </div>
+                                </div>
+                            </div>
+                           <% if(user.role === 0) { %>
+                           <div class="form-group">
+                                <label class="col-md-4 control-label" for="Skills">Skills</label>
+                                <div class="col-md-4">
+                                    <div id="tag_box" style="width: 100%">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                           <% } %>
+
+                            <!-- Textarea -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="Overview (max 200 words)">Bio</label>
+                                <div class="col-md-4">
+                                    <textarea class="form-control" rows="5" maxlength="140" cols="84" id="bio" name="bio" required>Bio</textarea>
+                                </div>
+                            </div>
+                            
+                    <div class="offset-sm-2 col-sm-10" style="text-align: center;">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+            <footer page-footer font-small style="text-align: center;">
+                <a href="/user-profile/<%= user._id %>">Go back to your profile</a>
+            </footer>
+        </div>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

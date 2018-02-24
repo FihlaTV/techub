@@ -1,275 +1,422 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>User Profile</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        body{margin-top:20px;}                                                                    
-    </style>
-</head>
-<body>
-<hr>
-<div class="container bootstrap snippet">
-    <div class="row">
-        <div class="col-sm-10">
-            <h1>User name</h1></div>
-        <div class="col-sm-2">
-            <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">
-            <!--left col-->
+    <head>
+        <meta charset="utf-8">
+        <title>Profile | <%= user.username %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                margin-top: 20px;
+            }
+            .fa {
+              padding: 8px;
+              font-size: 15px;
+              width: 30px;
+              text-align: center;
+              text-decoration: none;
+              margin: 0 20px;
+              border-radius: 50%;
+            }
 
-            <ul class="list-group">
-                <li class="list-group-item text-muted">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2014</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Last seen</strong></span> Yesterday</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Real Name</strong></span> Joseph Doe</li>
+            .fa:hover {
+                opacity: 0.7;
+            }
 
-            </ul>
+            .fa-facebook {
+              background: #3B5998;
+              color: white;
+            }
+
+            .fa-twitter {
+              background: #55ACEE;
+              color: white;
+            }
+
+            .fa-google {
+              background: #dd4b39;
+              color: white;
+            }
+            /* bxslider */
+            .bx-wrapper {
+              position: relative;
+              left: 50%;
+              transform: translateX(-50%);
+              padding: 0;
+              *zoom: 1;
+            }
+
+            .bx-wrapper img {
+              max-width: 100%;
+              display: block;
+              margin-bottom: 20px;
+            }
+
+            /** THEME
+            ===================================*/
+            .bxslider {
+              top: -12px;
+            }
+            .bx-wrapper .bx-viewport {
+                background: #fff;
+            }
+
+            .bx-wrapper .bx-pager{
+              display: none;
+            }
+
+            .bx-wrapper .bx-controls-auto {
+                position: absolute;
+                bottom: -30px;
+                width: 100%;
+            }
+
+            /* LOADER */
+
+            .bx-wrapper .bx-loading {
+                min-height: 50px;
+                background: url(https://bxslider.com/lib/images/bx_loader.gif) center center no-repeat #fff;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2000;
+            }
+
+            .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+                display: inline-block;
+                *zoom: 1;
+                *display: inline;
+            }
+
+            /* DIRECTION CONTROLS (NEXT / PREV) */
+
+            .bx-wrapper .bx-prev {
+                left: 0px;    
+              border-radius: 15px;
+            }
+
+            .bx-wrapper .bx-prev:before{
+              content:'';
+            background: url(http://www.japonshop.com/css/img/flch-izq.gif) no-repeat center;  
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              left: 50%;
+              top: 50%;  
+              transform: translate(-50%, -50%);
+            }
+
+            .bx-wrapper .bx-next {
+                right: 0px;   
+              border-radius: 15px;  
+            }
+
+            .bx-wrapper .bx-next:before{
+              content:'';
+            background: url(http://www.japonshop.com/css/img/flch-der.gif) no-repeat center; 
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              left: 50%;
+              top: 50%;  
+              transform: translate(-50%, -50%);
+            }
+
+            .bx-wrapper .bx-controls-direction a {  
+              position: absolute;
+              top: 50%;
+              transform:translateY(-50%);
+              outline: 0;
+              width: 32px;
+              height: 112px; 
+              text-indent: -9999px;
+              z-index: 9999;
+              border: 1px solid #e6e6e6;
+            background: -webkit-linear-gradient(#fcfcfc 0%, #ebebeb 100%);
+            background: -moz-linear-gradient(#fcfcfc 0%, #ebebeb 100%);
+            background: -o-linear-gradient(#fcfcfc 0%, #ebebeb 100%);
+            background: linear-gradient(#fcfcfc 0%, #ebebeb 100%);  
+            }
+
+            .bx-wrapper .bx-controls-direction a:hover{
+              background: #ebebeb;
+            }
+
+            .bx-wrapper .bx-controls-direction a:hover:before{
+              left:45%;
+            }
+
+            .bx-wrapper .bx-controls-direction a.bx-next:hover:before{
+              left:55%;
+            }
 
 
-            <ul class="list-group">
-                <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>My Projects</strong></span> 125</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Skills</strong></span> 13</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Project Posted</strong></span> 37</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong><a href="/profile">Update Setting</a></strong></span> 78</li>
-            </ul>
+            .bx-wrapper .bx-controls-direction a.disabled {
+                display: none;
+            }
 
-            <div class="panel panel-default">
-                <div class="panel-heading">Social Media</div>
-                <div class="panel-body">
-                    <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+            /* AUTO CONTROLS (START / STOP) */
+
+            .bx-wrapper .bx-controls-auto {
+                text-align: center;
+            }
+
+            .bx-wrapper .bx-controls-auto .bx-start {
+                display: block;
+                text-indent: -9999px;
+                width: 10px;
+                height: 11px;
+                outline: 0;
+                background: url(//bxslider.com/lib/images/controls.png) -86px -11px no-repeat;
+                margin: 0 3px;
+            }
+
+            .bx-wrapper .bx-controls-auto .bx-start:hover,
+            .bx-wrapper .bx-controls-auto .bx-start.active {
+                background-position: -86px 0;
+            }
+
+            .bx-wrapper .bx-controls-auto .bx-stop {
+                display: block;
+                text-indent: -9999px;
+                width: 9px;
+                height: 11px;
+                outline: 0;
+                background: url(//bxslider.com/lib/images/controls.png) -86px -44px no-repeat;
+                margin: 0 3px;
+            }
+
+            .bx-wrapper .bx-controls-auto .bx-stop:hover,
+            .bx-wrapper .bx-controls-auto .bx-stop.active {
+                background-position: -86px -33px;
+            }
+
+            /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+            .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+                text-align: left;
+                width: 80%;
+            }
+
+            .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+                right: 0;
+                width: 35px;
+            }
+
+            /* IMAGE CAPTIONS */
+
+            .bx-wrapper .bx-caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: #666\9;
+                background: rgba(80, 80, 80, 0.75);
+                width: 100%;
+            }
+
+            .bx-wrapper .bx-caption span {
+                color: #fff;
+                font-family: Arial;
+                display: block;
+                font-size: .85em;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <hr>
+        <div class="container bootstrap snippet">
+            <div class="row">
+                <div class="col-sm-10">
+                    <h1><%= user.username %></h1>
+                </div>
+                <div class="col-sm-2">
+                    <a href="/user-profile" class="pull-right">
+                        <img title="profile image" class="img-circle img-responsive" src="https://www.w3schools.com/w3css/img_avatar2.png">
+                    </a>
                 </div>
             </div>
-
-        </div>
-        <!--/col-3-->
-        <div class="col-sm-9">
-
-            <ul class="nav nav-tabs" id="myTab">
-                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                <li><a href="#messages" data-toggle="tab">Inbox</a></li>
-                <li><a href="#settings" data-toggle="tab">Account</a></li>
-            </ul>
-
-            <div class="tab-content">
-                <div class="tab-pane active" id="home">
-                    <!--/table-resp-->
-                    <h4>Overview</h4>
-
-                    <hr>
-
-                </div>
-                <!--/tab-pane-->
-                <div class="tab-pane" id="messages">
-
-                    <h2></h2>
-
+            <div class="row">
+                <div class="col-sm-3">
+                    <!--left col-->
                     <ul class="list-group">
-                        <li class="list-group-item text-muted">Inbox</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to the latest summary report from the..</a> 2.13.2014</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been a request on your account since that was..</a> 2.11.2014</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-
+                        <li class="list-group-item text-muted">Profile</li>
+                        <li class="list-group-item text-right">
+                            <span class="pull-left">
+                                <strong>Joined</strong>
+                            </span>
+                            <%= user.joinedOn_formatted %>
+                        </li>
+                        <!-- <li class="list-group-item text-right">
+                            <span class="pull-left">
+                                <strong>Last seen</strong>
+                            </span>
+                            <%= user.visited %>
+                        </li> -->
+                        <li class="list-group-item text-right">
+                            <span class="pull-left">
+                                <strong>Real Name</strong>
+                            </span>
+                            <%= user.name %>
+                        </li>
                     </ul>
 
-                </div>
-                <!--/tab-pane-->
-                <div class="tab-pane" id="settings">
-
-                    <hr>
-                    <form class="form" action="##" method="post" id="registrationForm">
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="first_name">
-                                    <h4>First name</h4></label>
-                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="last_name">
-                                    <h4>Last name</h4></label>
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="phone">
-                                    <h4>Phone</h4></label>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="mobile">
-                                    <h4>Mobile</h4></label>
-                                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="email">
-                                    <h4>Email</h4></label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="email">
-                                    <h4>Location</h4></label>
-                                <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="password">
-                                    <h4>Password</h4></label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="password2">
-                                    <h4>Verify</h4></label>
-                                <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <br>
-                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                            </div>
-                        </div>
-                        <div class="page-header text-center">
-        
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-    </div>
-
-    <div class="row">
-
-        <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
-
-                <% if (user.local.email) { %>
-                    <p>
-                        
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        
-                    </p>
-                    
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                <% } %>
-
-            </div>
-        </div>
-
-        <!-- FACEBOOK INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
-
-                <!-- check if the user has this token (is the user authenticated with this social account) -->
-                <% if (user.facebook.token) { %>
-                    <p>
-                        <strong>email</strong>: <%= user.facebook.email %><br>
-                        <strong>name</strong>: <%= user.facebook.name %><br>
-                    </p>
-
-                    <a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
-                <% } %>
-
-            </div>
-        </div>
-    </div>
-    <div class="row">
-
-        <!-- TWITTER INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3 class="text-info"><span class="fa fa-twitter"></span> Twitter</h3>
-
-                <% if (user.twitter.token) { %>
-                    <p>
-                        <strong>display name</strong>: <%= user.twitter.displayName %><br>
-                        <strong>username</strong>: <%= user.twitter.username %>
-                    </p>
-
-                    <a href="/unlink/twitter" class="btn btn-info">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/twitter" class="btn btn-info">Connect Twitter</a>
-                <% } %>
-
-            </div>
-        </div>
-
-        <!-- GOOGLE INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google+</h3>
-
-                <% if (user.google.token) { %>
-                    <p>
-                        <strong>email</strong>: <%= user.google.email %><br>
-                        <strong>name</strong>: <%= user.google.name %>
-                    </p>
-
-                    <a href="/unlink/google" class="btn btn-danger">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/google" class="btn btn-danger">Connect Google</a>
-                <% } %>
-
-            </div>
-        </div>
-    </div>
-                    </form>
-                </div>
-
-            </div>
-            <!--/tab-pane-->
-        </div>
-        <!--/tab-content-->
-
-    </div>
-    <!--/col-9-->
-</div>
-<!--/row-->
-
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+                    <ul class="list-group">
+                        <li class="list-group-item text-muted">
+                            Activity <i class="fa fa-dashboard fa-1x"></i>
+                        </li>
+                        <li class="list-group-item">
+                                 <strong>
+                                    <a href="/dashboard">Dashboard</a>
+                                 </strong>
+                        </li>
+                         <li class="list-group-item ">
+                                <strong>
+                                    <a href="/user-update/<%= user._id %>">Update Profile</a>
+                                </strong>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>
+                                <a href="#">Projects Done</a>
+                            </strong>
+                            <span class="badge">
+                                12
+                            </span>
                             
+                        </li>
+                        <li class="list-group-item">
+                            <strong>
+                                <a href="#">Feedback</a>
+                            </strong>
+                            <span class="badge">
+                                13
+                            </span>
+                            
+                        </li>
+                       
+                    </ul>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Social Media</div>
+                        <div class="panel-body">
+                            <i class="fa fa-facebook fa-2x"></i>
+                            <i class="fa fa-twitter fa-2x"></i>
+                            <i class="fa fa-google fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <!--/col-3-->
+                <div class="col-sm-9">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active">
+                            <a href="#home" data-toggle="tab">Home</a>
+                        </li>
+                        <li>
+                            <a href="#settings" data-toggle="tab">Account</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <div>                           
+                                <h4>Overview</h4>
+                                <p><%= user.bio %></p>
+                            </div>
+                            <div>
+                            <hr><h4>Projects Done</h4>
+                            <div class="bxslider">
+                                <div>
+                                  <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt=468%C3%97135&w=468&h=135"/>
+                                  <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt=468%C3%97135&w=468&h=135"/>
+                                </div>
+                                <div>
+                                  <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt=468%C3%97135&w=468&h=135"/>
+                                  <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt=468%C3%97135&w=468&h=135"/>
+                                </div>
+                                <div>
+                                  <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt=468%C3%97135&w=468&h=135"/>
+                                  <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt=468%C3%97135&w=468&h=135"/>
+                                </div>
+                            </div>
+                            </div>
+                            <div>
+                                <hr><h4>Skills</h4>
+                                <h6><%= user.skills %></h6>
+                            </div>
+                            
+                            <hr>
+                        </div>
+                        <!--/tab-pane-->
+                        <div class="tab-pane" id="settings">
+                            <hr>
+                            <form id="identicalForm" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">Password</label>
+                                    <div class="col-xs-5">
+                                        <input type="password" class="form-control" name="password"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">Retype password</label>
+                                    <div class="col-xs-5">
+                                        <input type="password" class="form-control" name="confirmPassword"/>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Change Password</button>
+                            </form>
+                            <hr>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">Change Username</label>
+                                    <div class="col-xs-5">
+                                        <input type="text" class="form-control" id="inputName" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Change Username</button>
+                            </form>
+                            <hr>
+                            <div class="row">
+                                <!-- LOCAL INFORMATION -->
+                                <div class="col-sm-6">
+                                    <div class="well">
+                                        <h3><span class="fa fa-user"></span> Local</h3>
 
-                        
+                                        <% if (user.email) { %>
+                                            <p>
+                                                <strong>email</strong>: <%= user.email %><br>
+                                            </p>
+                                            
+                                            <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                                        <% } else { %>
+                                            <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                                        <% } %>
+                                    </div>
+                                </div>
+    
+                            </div>
+                
+                        </div>
+                    </div>
+                    <!--/tab-pane-->
+                </div>
+                <!--/tab-content-->
+            </div>
+            <!--/col-9-->
+        </div>
+        <!--/row-->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.min.js"></script>
+        <script type="text/javascript">
+            $('.bxslider').bxSlider({
+          minSlides: 2,
+          maxSlides: 2,
+          slideWidth: 468,
+          slideMargin: 20,
+          auto: true,
+        });
+        </script>        
 
-                  
-                                                      
-</script>
 </body>
 </html>

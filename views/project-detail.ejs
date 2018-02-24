@@ -1,0 +1,187 @@
+<html>
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/load-more-button.css">
+    <style>
+        html,body,h1,h2,h3,h4,h5 {
+            font-family: "Open Sans", sans-serif
+        }
+    </style>
+    <body class="w3-theme-l5">
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+                <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="/dashboard" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">
+                    <i class="fa fa-home w3-margin-right"></i>
+                    Logo
+                
+                </a>
+                <a href="/user-profile" class="w3-bar-item w3-button w3-hide-small w3-padding-16 w3-hover-white" title="Account Settings">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a href="/logout" class=" w3-button w3-right w3-padding-16 w3-hover-white glyphicon glyphicon-log-out" title="Logout"></a>
+            </div>
+        </div>
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+            <a href="/user-profile" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+        </div>
+        <!-- Page Container -->
+        <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+            <!-- The Grid -->
+            <div class="w3-row">
+                <!-- Left Column -->
+                <div class="w3-col m3">
+                    <div class="w3-card w3-round w3-white">
+                        <div class="w3-container">
+                            <h4 class="w3-center">
+                                <a href="<%= user.url %>"><%= user.username %></a>
+                            </h4>
+                            <p class="w3-center">
+                                <img src="https://www.w3schools.com/w3css/img_avatar2.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
+                            </p>
+                            <hr>
+                            <p>
+                                <i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>
+                                <%= user.bio %>
+                            
+                            </p>
+                            <p>
+                                <i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>
+                                <%= user.location %>
+                            
+                            </p>
+                            <p>
+                                <i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>
+                                <%= user.date_of_birth %>
+                            
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Accordion -->
+                    <% if(user.role === 0 ) { %>
+                    <div class="w3-card w3-round">
+                        <div class="w3-white">
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/myprojects">Unfinished jobs</a>
+                            
+                            </button>
+                            
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/projects">Browse projects</a>
+                                
+                            </button>
+                            
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/jobs">Browse jobs</a>
+                            
+                            </button>
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/freelancers">Browse freelancers</a>
+                            
+                            </button>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% if (user.role === 1) { %>
+                    <div class="w3-card w3-round">
+                        <div class="w3-white">
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="#">My Offers</a>
+                            
+                            </button>
+                            
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/offers">Browse Offers</a>
+                                
+                            </button>
+
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/projects">Browse projects</a>
+                                
+                            </button>
+                            
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/freelancers">Browse freelancers</a>
+                            
+                            </button>
+                        </div>
+                    </div>
+                    <% } %>
+                   
+                    <br>
+                    <!-- End Left Column -->
+                </div>
+                <!-- Middle Column -->
+                <div class="w3-col m7">
+                            
+                           <h1>Title: <%= project.title %></h1>
+                           <h5><%= project.created_at_formatted %></h5>
+                           <p><%= project.description %></p>    
+                </div>
+                <!-- Right Column -->
+                <div class="w3-col m2">
+                     class="w3-col m2">
+                    <% if (user.role === 0) { %> 
+                    <div class="w3-card w3-round w3-white w3-center">
+                        <div class="w3-container">
+                            <p>My Funds</p>
+                            <p>
+                                <strong>INR (primary)</strong>
+                            </p>
+                            <p>
+                                <button class="w3-button w3-theme">Deposit</button>
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+                        <p>Bids Left</p>
+                        <p>
+                            <strong>8/8</strong>
+                        </p>
+                        <p>
+                            <button class="w3-button w3-theme">View Projects</button>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+                        <p>Advertise here</p>
+                    </div>
+                    <br>
+                    <!-- End Right Column -->
+                </div>
+                    <% } else if(user.role === 1) { %> 
+                    <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+                        <p>Advertise here</p>
+                    </div>
+                    <% } else { %> 
+                      <h3>Nothing to show</h3>
+                    <% } %>
+                </div>
+                <!-- End Grid -->
+            </div>
+            <!-- End Page Container -->
+        </div>
+        <br>
+        <!-- Footer -->
+        <footer class="w3-container w3-theme-d3 w3-padding-16">
+            <h5>Footer</h5>
+        </footer>
+    </body>
+</html>
+

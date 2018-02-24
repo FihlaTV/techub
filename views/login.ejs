@@ -1,4 +1,3 @@
-<!doctype html>
 <html>
 <head>
     <title>Node Authentication</title>
@@ -17,12 +16,15 @@
     <% if (message.length > 0) { %>
         <div class="alert alert-danger"><%= message %></div>
     <% } %>
+        <% if (success_msg.length > 0) { %>
+        <div class="alert alert-success"><%= success_msg %></div>
+    <% } %>
 
     <!-- LOGIN FORM -->
     <form action="/login" method="post">
         <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" name="email">
+            <label>Username</label>
+            <input type="username" class="form-control" name="username">
         </div>
         <div class="form-group">
             <label>Password</label>

@@ -1,0 +1,75 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><%= user.username %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <style>
+           /* CSS used here will be applied after bootstrap.css */
+            body {
+              background-color: #eaeaea;
+            }
+
+            img.avatar {
+              border: 1px solid #eee;
+            }
+
+            .only-bottom-margin {
+              margin-top: 0px;
+            }
+
+            .activity-mini {
+              padding-right: 15px;
+              float: left;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12 lead">User profile<hr></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; 
+              display:block; margin:auto;" src="<%= user.profile_pic %>">
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 class="only-bottom-margin"><%= user.username %></h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <span class="text-muted">Email:</span> <%= user.email %><br>
+                  <span class="text-muted">Birth date:</span> <%= user.date_of_birth_formatted %><br>
+                  <small class="text-muted"><%= user.joinedOn_formatted %></small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% if(user.role === 0 ) { %> 
+          <div class="row">
+            <div class="col-md-12">
+              <hr><h3>Projects</h3>
+              <h4><%= user_projects.title %></h4>
+              <small><%= user_projects.created_at_formatted %></small>
+              <p><%= user_projects.description %></p>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+    </body>
+</html>

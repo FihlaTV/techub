@@ -1,295 +1,226 @@
 <html>
-<title>Dashboard</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="assets/css/load-more-button.css">
-
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
-</style>
-<body class="w3-theme-l5">
-
-<!-- Navbar -->
-<div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="/dashboard" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
-  <a href="/user-profile" class="w3-bar-item w3-button w3-hide-small w3-padding-16 w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
-  <a href="/logout" class=" w3-button w3-right w3-padding-16 w3-hover-white glyphicon glyphicon-log-out" title="Logout"></a>
- </div>
-</div>
-
-<!-- Navbar on small screens -->
-<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-  <a href="/user-profile" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
-</div>
-
-<!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
-  <!-- The Grid -->
-  <div class="w3-row">
-    <!-- Left Column -->
-    <div class="w3-col m3">
-      <!-- Profile -->
-      <div class="w3-card w3-round w3-white">
-        <div class="w3-container">
-         <h4 class="w3-center"><a href="/user-profile"> My Profile</a></h4>
-         <p class="w3-center"><img src="https://www.w3schools.com/w3css/img_avatar2.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-         <hr>
-         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
-        </div>
-      </div>
-      <br>
-      
-      <!-- Accordion -->
-      <div class="w3-card w3-round">
-        <div class="w3-white">
-          <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>My Projects</button>
-          <div id="Demo1" class="w3-hide w3-container">
-            <p>Some text..</p>
-          </div>
-          <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>My Skills</button>
-          <div id="Demo2" class="w3-hide w3-container">
-            <p>Some other text..</p>
-          </div>
-          <button  class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>Feedback</button>
-          <div id="Demo3" class="w3-hide w3-container">
-         <div class="w3-row-padding">
-         <br>
-           <div class="w3-half">
-             <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/fjords.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-         </div>
-          </div>
-        </div>      
-      </div>
-      <br>
-      
-      
-     
-    <!-- End Left Column -->
-    </div>
-    
-    <!-- Middle Column -->
-    <div class="w3-col m7">
-
- 
-  <ul class="nav nav-tabs" style=" margin: 0 15px;">
-    <li class="active"><a data-toggle="pill" href="#home">Feed</a></li>
-    <li><a data-toggle="pill" href="#menu1">Browse Projects</a></li>
-    <li><a data-toggle="pill" href="#menu2">Browse Category</a></li>
-  
-  </ul>
-  
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-             <div class="w3-container w3-card w3-white w3-round w3-margin blogBox moreBox"><br>
-        <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">1 min</span>
-        <h4>John Doe</h4><br>
-        <hr class="w3-clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-half">
-              <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/load-more-button.css">
+    <style>
+        html,body,h1,h2,h3,h4,h5 {
+            font-family: "Open Sans", sans-serif
+        }
+    </style>
+    <body class="w3-theme-l5">
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+                <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="/dashboard" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">
+                    <i class="fa fa-home w3-margin-right"></i>
+                    Logo
+                </a>
+                <a href="/user-profile/<%= user._id %>" class="w3-bar-item w3-button w3-hide-small w3-padding-16 w3-hover-white" title="Account Settings">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a href="/user-profile/<%= user._id %>/msg" class="w3-bar-item w3-button w3-hide-small w3-padding-16 w3-hover-white" title="Account Settings">
+                    <i class="fa fa-envelope"></i>
+                </a>
+                <a href="/logout" class=" w3-button w3-right w3-padding-16 w3-hover-white glyphicon glyphicon-log-out" title="Logout"></a>
             </div>
-            <div class="w3-half">
-              <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
-          </div>
         </div>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div>
-      
-      <div class="w3-container w3-card w3-white w3-round w3-margin blogBox moreBox"><br>
-        <img src="/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">16 min</span>
-        <h4>Jane Doe</h4><br>
-        <hr class="w3-clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div>  
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Inbox</a>
+            <a href="/user-profile/<%= user._id %>" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+        </div>
+        <!-- Page Container -->
+        <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+            <!-- The Grid -->
+            <div class="w3-row">
+                <!-- Left Column -->
+                <div class="w3-col m3">
+                    <!-- Profile -->
+                    <div class="w3-card w3-round w3-white">
+                        <div class="w3-container">
+                            <h4 class="w3-center">
+                                <a href="/user-profile/<%= user._id %>"><%= user.username %></a>
+                            </h4>
+                            <p class="w3-center">
+                                <img src="https://www.w3schools.com/w3css/img_avatar2.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
+                            </p>
+                            <hr>
+                            <p>
+                                <i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>
+                                <%= user.bio %>
+                            
+                            </p>
+                            <p>
+                                <i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>
+                                <%= user.location %>
+                            
+                            </p>
+                            <p>
+                                <i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>
+                                <%= user.date_of_birth %>
+                            
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Accordion -->
+                    <% if(user.role === 0 ) { %>
+                    <div class="w3-card w3-round">
+                        <div class="w3-white">
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/myprojects">Unfinished jobs</a>
+                            
+                            </button>
+                            
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/projects">Browse projects</a>
+                                
+                            </button>
+                            
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/jobs">Browse jobs</a>
+                            
+                            </button>
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/freelancers">Browse freelancers</a>
+                            
+                            </button>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% if (user.role === 1) { %>
+                    <div class="w3-card w3-round">
+                        <div class="w3-white">
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="#">My Offers</a>
+                            
+                            </button>
+                            
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/offers">Browse Offers</a>
+                                
+                            </button>
 
-      <div class="w3-container w3-card w3-white w3-round w3-margin blogBox moreBox"><br>
-        <img src="/w3images/avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">32 min</span>
-        <h4>Angie Jane</h4><br>
-        <hr class="w3-clear">
-        <p>Have you seen this?</p>
-        <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div> 
-      
-            <div class="w3-container w3-card w3-white w3-round w3-margin blogBox moreBox"><br>
-        <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">1 min</span>
-        <h4>John Doe</h4><br>
-        <hr class="w3-clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-half">
-              <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/projects">Browse projects</a>
+                                
+                            </button>
+                            
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                                <a href="/freelancers">Browse freelancers</a>
+                            
+                            </button>
+                        </div>
+                    </div>
+                    <% } %>
+                    <br>
+                    <!-- End Left Column -->
+                </div>
+                <!-- Middle Column -->
+                <div class="w3-col m7">
+                    <% if (user.role === 0) { %> 
+                    <ul class="nav nav-tabs" style="width: 80%;margin: 0 auto;">
+                        <li class="active">
+                            <a data-toggle="pill" href="#home">Feed</a>
+                        </li>
+                    
+                    </ul>
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                    
+                        </div>
+                       
+                    </div>
+                    <% } %>
+                    <% if (user.role === 1) { %>
+                    <button class="w3-button w3-theme">Post a Project</button>
+                    <button class="w3-button w3-theme">Post a Offer</button>
+                    <% } %> 
+                    <!-- End Middle Column -->
+                </div>
+                <!-- Right Column -->
+                <div class="w3-col m2">
+                    <% if (user.role === 0) { %> 
+                    <div class="w3-card w3-round w3-white w3-center">
+                        <div class="w3-container">
+                            <p>My Funds</p>
+                            <p>
+                                <strong>INR (primary)</strong>
+                            </p>
+                            <p>
+                                <button class="w3-button w3-theme">Deposit</button>
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+                        <p>Bids Left</p>
+                        <p>
+                            <strong>8/8</strong>
+                        </p>
+                        <p>
+                            <button class="w3-button w3-theme">View Projects</button>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+                        <p>Advertise here</p>
+                    </div>
+                    <br>
+                    <!-- End Right Column -->
+                </div>
+                 <% } %>
+                <% if(user.role === 1) { %> 
+                <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+                    <p>Advertise here</p>
+                </div>
+                <% } %> 
+                     
+                
+                <!-- End Grid -->
             </div>
-            <div class="w3-half">
-              <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
-          </div>
+            <!-- End Page Container -->
         </div>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div>
-      
-      <div class="w3-container w3-card w3-white w3-round w3-margin blogBox moreBox"><br>
-        <img src="/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">16 min</span>
-        <h4>Jane Doe</h4><br>
-        <hr class="w3-clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div>  
+        <br>
+        <!-- Footer -->
+        <footer class="w3-container w3-theme-d3 w3-padding-16">
+            <h5>Footer</h5>
+        </footer>
+        <script>
+            // Accordion
+            function myFunction(id) {
+                var x = document.getElementById(id);
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                    x.previousElementSibling.className += " w3-theme-d1";
+                } else {
+                    x.className = x.className.replace("w3-show", "");
+                    x.previousElementSibling.className = x.previousElementSibling.className.replace(" w3-theme-d1", "");
+                }
+            }
 
-      <div class="w3-container w3-card w3-white w3-round w3-margin blogBox moreBox"><br>
-        <img src="/w3images/avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">32 min</span>
-        <h4>Angie Jane</h4><br>
-        <hr class="w3-clear">
-        <p>Have you seen this?</p>
-        <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-    <div id="menu3" class="tab-pane fade">
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-  </div>
+            // Used to toggle the menu on smaller screens when clicking on the menu button
+            function openNav() {
+                var x = document.getElementById("navDemo");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
 
-        
-
-
-     <div id="loadMore" style="">
-      <a href="#">Load More</a>
-    </div>
-    <!-- End Middle Column -->
-    </div>
-    
-    <!-- Right Column -->
-    <div class="w3-col m2">
-      <div class="w3-card w3-round w3-white w3-center">
-        <div class="w3-container">
-          <p>My Funds</p>
-          <p><strong>INR (primary)</strong></p>
-          <p><button class="w3-button w3-theme">Deposit</button></p>
-        </div>
-      </div>
-      <br>
-      
-      <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-        <p>Bids Left</p>
-        <p><strong>8/8</strong></p>
-        <p><button class="w3-button w3-theme">View Projects</button></p>
-      </div>
-      <br>
-
-      <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-        <p>Advertise here</p>
-      </div>
-      <br>
-      
-      
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-<!-- End Page Container -->
-</div>
-<br>
-
-<!-- Footer -->
-<footer class="w3-container w3-theme-d3 w3-padding-16">
-  <h5>Footer</h5>
-</footer>
-
- 
-<script>
-// Accordion
-function myFunction(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-theme-d1";
-    } else { 
-        x.className = x.className.replace("w3-show", "");
-        x.previousElementSibling.className = 
-        x.previousElementSibling.className.replace(" w3-theme-d1", "");
-    }
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-
-$( document ).ready(function () {
-  $(".moreBox").slice(0, 3).show();
-    if ($(".blogBox:hidden").length != 0) {
-      $("#loadMore").show();
-    }   
-    $("#loadMore").on('click', function (e) {
-      e.preventDefault();
-      $(".moreBox:hidden").slice(0, 6).slideDown();
-      if ($(".moreBox:hidden").length == 0) {
-        $("#loadMore").fadeOut('slow');
-      }
-    });
-  });
-</script>
-
-</body>
-</html> 
+        </script>
+    </body>
+</html>
 

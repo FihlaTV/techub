@@ -1,26 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "node-authentication",
-  "main": "server.js",
-  "dependencies": {
-    "express": "~4.14.0",
-    "ejs": "~2.5.2",
-    "mongoose": "~4.13.1",
-    "passport": "~0.3.2",
-    "passport-local": "~1.0.0",
-    "passport-facebook": "~2.1.1",
-    "passport-twitter": "~1.0.4",
-    "passport-google-oauth": "~1.0.0",
-    "connect-flash": "~0.1.1",
-    "bcrypt-nodejs": "latest",
-    "morgan": "~1.7.0",
-    "body-parser": "~1.15.2",
-    "cookie-parser": "~1.4.3",
-    "method-override": "~2.3.6",
-    "express-session": "~1.14.1"
-  }
-=======
-  "name": "techhub",
+  "name": "techub",
   "version": "1.0.0",
   "description": "A web app for tech service which lists all the local service providers who provide computer and other device maintenance and repair services",
   "main": "server.js",
@@ -37,6 +16,31 @@
   "bugs": {
     "url": "https://github.com/satyampatro/techub/issues"
   },
-  "homepage": "https://github.com/satyampatro/techub#readme"
->>>>>>> f35e748b086196e0ee05ef82dc7b4e91ec3e854c
+  "homepage": "https://github.com/satyampatro/techub#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "bcrypt-nodejs": "0.0.3",
+    "config": "^1.29.4",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^5.0.0",
+    "ejs": "^2.5.7",
+    "ejs-lint": "^0.3.0",
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.0.1",
+    "fs": "0.0.1-security",
+    "moment": "^2.20.1",
+    "mongoose": "^5.0.5",
+    "morgan": "^1.9.0",
+    "multer": "^1.3.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "path": "^0.12.7",
+    "validator": "^9.4.0"
+  }
 }
