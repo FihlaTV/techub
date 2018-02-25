@@ -24,11 +24,11 @@
         <div class="col-md-8">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
-                    <form action="/project/create" method="post">
+                    <form action="/job/create" method="post">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-file">
-                            </span>POST NEW PROJECT</a>
+                            </span>POST NEW JOB</a>
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
@@ -39,27 +39,13 @@
                                         <input type="text" class="form-control" name="title" placeholder="Title" required />
                                     </div>
                                     <div class="form-group">
+                                        <input type="text" class="form-control" name="position" placeholder="Position" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="locality" placeholder="Location" required />
+                                    </div>
+                                    <div class="form-group">
                                         <textarea class="form-control" name="description" placeholder="Description" rows="5" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="category">
-                                            Category</label>
-                                        <select class="form-control" id="category" name="category">
-                                            <option value="0">Articles</option>
-                                            <option value="1">Tutorials</option>
-                                            <option value="2">Freebies</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="tags">
-                                            Tags</label>
-                                        <input type="text" class="form-control" id="tags" name="tags" placeholder="Tags" />
                                     </div>
                                 </div>
                             </div>

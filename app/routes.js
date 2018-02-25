@@ -206,6 +206,10 @@ router.get('/user/:id', isLoggedIn, user_controller.user_detail);
 // GET request for list of all freelancers.
 router.get('/freelancers', isLoggedIn, user_controller.user_list);
 
+router.get('/todo?', isLoggedIn, user_controller.user_todo);
+
+router.get('/jobstatus?', isLoggedIn, user_controller.user_jobstatus)
+
 /// PROJECTS ROUTES ///
 
 // GET request for creating a Project. NOTE This must come before routes that display Project (uses id).
@@ -217,12 +221,29 @@ router.post('/project/create',  project_controller.project_create_post);
 // POST request to delete Project.
 router.post('/project/:id/delete', project_controller.project_delete_post);
 
-// GET request for one Book.
+// GET request for one Project.
 router.get('/project/:id', isLoggedIn, project_controller.project_detail);
 
 // GET request for list of all Projects.
 router.get('/projects', isLoggedIn, project_controller.project_list);
 
+
+/// JOBS ROUTES ///
+
+// GET request for creating a job. NOTE This must come before routes that display job (uses id).
+router.get('/job/create', isLoggedIn, job_controller.job_create_get);
+
+// POST request for creating Job.
+router.post('/job/create',  job_controller.job_create_post);
+
+// POST request to delete Job.
+router.post('/job/:id/delete', job_controller.job_delete_post);
+
+// GET request for one Job.
+router.get('/job/:id', isLoggedIn, job_controller.job_detail);
+
+// GET request for list of all jobs.
+router.get('/jobs', isLoggedIn, job_controller.job_list);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())

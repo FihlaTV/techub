@@ -1,5 +1,5 @@
 <html>
-    <title>Project Detail</title>
+    <title>Job Detail</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -38,7 +38,7 @@
             <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
             <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
             <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-            <a href="/user-profile" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+            <a href="/user-profile/" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
         </div>
         <!-- Page Container -->
         <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
@@ -47,9 +47,11 @@
                 <!-- Middle Column -->
                 <div class="w3-col m7">
                             
-                           <h1>Title: <%= project.title %></h1>
-                           <h5><%= project.created_at_formatted %></h5>
-                           <p><%= project.description %></p>    
+                           <h1>Title: <%= job.title %></h1>
+                           <h5><%= job.position %></h5>
+                           <h5><%= job.locality %></h5>
+                           <h5><%= job.created_at_formatted %></h5>
+                           <p><%= job.description %></p>    
                 </div>
                 </div>
                 <!-- End Grid -->

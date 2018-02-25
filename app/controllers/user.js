@@ -69,5 +69,25 @@ exports.user_update_post = (req, res) => {
   }
 };
 
+exports.user_jobstatus = function(req, res, next) {
+  Job.find({}, 'title employer description position locality created_at_formatted')
+    .populate('user')
+    .exec(function (err, list_jobs) {
+      if (err) { return next(err); }
+      //Successful, so render
+      res.render('jobstatus.ejs', { job_list: list_jobs, user: req.user});
+    });
+};
+
+exports.user_todo = function(req, res, next) {
+    Project.find({}, 'title user description created_at_formatted')
+    .populate('user')
+    .exec(function (err, list_projects) {
+      if (err) { return next(err); }
+      //Successful, so render
+      res.render('todo.ejs', { project_list: list_projects, user: req.user});
+    });
+}
+
      
 

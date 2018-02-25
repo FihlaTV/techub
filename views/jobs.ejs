@@ -24,7 +24,7 @@
     
     <div class="row">
       
-      <div class="col-md-12"><h1>Projects</h1></div>
+      <div class="col-md-12"><h1>Jobs</h1></div>
       
       
     </div>
@@ -132,15 +132,15 @@
       
       <hr>
       
-      <% for (var project in project_list) { %>
+      <% for (var job in job_list) { %>
       <div class="row">
         <div class="col-sm-4"><a href="#" class=""><img src="http://placehold.it/1280X720" class="img-responsive"></a>
         </div>
         <div class="col-sm-8">
-          <h3 class="title"><%= project_list[project].title %></h3>
-          <p class="text-muted"><span class="glyphicon glyphicon-lock"></span><%= project_list[project].description %></p>
+          <h3 class="title"><%= job_list[job].title %></h3>
+          <p class="text-muted"><span class="glyphicon glyphicon-lock"></span><%= job_list[job].description %></p>
           
-          <p class="text-muted">Presented by <a href="#"><% project_list[project].username %></a></p>
+          <p class="text-muted">Presented by <a href="#"><% job_list[job].username %></a></p>
           
         </div>
       </div>

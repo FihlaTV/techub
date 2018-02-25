@@ -1,9 +1,9 @@
-// load the things we need
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 let validator = require('validator');
-
+var Schema = mongoose.Schema;
 var moment = require('moment');
+var Project = require('./project.js')
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
@@ -34,12 +34,10 @@ var userSchema = mongoose.Schema({
         type: String,
         default: ''
     },
-    skills: {
-        type: [],
-    },
-    projects: {
-        type: [],
-    },
+    skills: [String],
+    projects: [{
+        type: Schema.Types.ObjectId, ref: 'Project'
+    }],
     location: {
         type: String,
         default: ''
@@ -47,6 +45,15 @@ var userSchema = mongoose.Schema({
     date_of_birth: {
         type: String,
     },
+    fb_url: {
+        type: String
+    },
+    twitter_url: {
+        type: String
+    },
+    google_url: {
+        type: String
+    }
     // lastVisited: {
     //     type: Date
     // },

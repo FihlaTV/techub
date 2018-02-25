@@ -29,7 +29,7 @@
                 <a href="/user-profile/<%= user._id %>" class="w3-bar-item w3-button w3-hide-small w3-padding-16 w3-hover-white" title="Account Settings">
                     <i class="fa fa-user"></i>
                 </a>
-                <a href="/user-profile/<%= user._id %>/msg" class="w3-bar-item w3-button w3-hide-small w3-padding-16 w3-hover-white" title="Account Settings">
+                <a href="/user-profile/msg/<%= user._id %>" class="w3-bar-item w3-button w3-hide-small w3-padding-16 w3-hover-white" title="Account Settings">
                     <i class="fa fa-envelope"></i>
                 </a>
                 <a href="/logout" class=" w3-button w3-right w3-padding-16 w3-hover-white glyphicon glyphicon-log-out" title="Logout"></a>
@@ -79,7 +79,7 @@
                     <div class="w3-card w3-round">
                         <div class="w3-white">
                             <button class="w3-button w3-block w3-theme-l1 w3-left-align">
-                                <a href="/myprojects">Unfinished jobs</a>
+                                <a href="/todo?">Unfinished jobs</a>
                             
                             </button>
                             
@@ -103,12 +103,12 @@
                     <div class="w3-card w3-round">
                         <div class="w3-white">
                             <button class="w3-button w3-block w3-theme-l1 w3-left-align">
-                                <a href="#">My Offers</a>
+                                <a href="/jobstatus">My Offers</a>
                             
                             </button>
                             
                             <button class="w3-button w3-block w3-theme-l1 w3-left-align">
-                                <a href="/offers">Browse Offers</a>
+                                <a href="/jobs">Browse Offers</a>
                                 
                             </button>
 
@@ -144,8 +144,12 @@
                     </div>
                     <% } %>
                     <% if (user.role === 1) { %>
-                    <button class="w3-button w3-theme">Post a Project</button>
-                    <button class="w3-button w3-theme">Post a Offer</button>
+                    <div class="w3-center">
+                        <a href="/project/create"><button class="w3-button w3-theme">Post a Project</button></a>
+                        <a href="/job/create"><button class="w3-button w3-theme">Post a Offer</button></a>
+                        
+                    </div>
+                    
                     <% } %> 
                     <!-- End Middle Column -->
                 </div>
