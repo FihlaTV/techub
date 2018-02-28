@@ -1,4 +1,4 @@
-﻿/*=============================================================
+/*=============================================================
     Authour URL: www.designbootstrap.com
     
     http://www.designbootstrap.com/
@@ -12,14 +12,10 @@
     IN EXCHANGE JUST TELL PEOPLE ABOUT THIS WEBSITE
    
 ========================================================  */
-
 /*==============================
 GENERAL STYLES
 ==============================*/
-
-@import url(http://fonts.googleapis.com/css?family=Anton|Maven+Pro:500,700);
-
-body {
+@import url(http://fonts.googleapis.com/css?family=Anton|Maven+Pro:500,700); body {
     font-family: 'Maven Pro', sans-serif;
     line-height: 25px;
 }
@@ -40,11 +36,11 @@ section {
 }
 
 .set-bk-clr {
-    background-color: #FF2276;
+    background-color: #4d636f;
 }
 
 .clr-set {
-    color: #FF2276;
+    color: #4d636f;
 }
 
 .f-big {
@@ -55,6 +51,7 @@ section {
 .set-bk-clr:hover {
     background-color: rgba(107, 1, 41, 0.67);
 }
+
 /*==============================
 NAVBAR STYLES
 ==============================*/
@@ -63,39 +60,42 @@ NAVBAR STYLES
     font-size: 20px;
     text-transform: uppercase;
 }
-.navbar-brand {
-padding:0px;
 
+.navbar-brand {
+    padding: 0px;
 }
-    .navbar-brand img {
-        height:50px;
-    }
+
+.navbar-brand img {
+    height: 50px;
+}
+
 .navbar-default .navbar-toggle {
     border-color: #FFF;
 }
 
-    .navbar-default .navbar-toggle .icon-bar {
-        background-color: #FFF;
-    }
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}
 
-    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-        background-color: rgba(0, 0, 0, 0);
-    }
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgba(0, 0, 0, 0);
+}
 
 .navbar-default .navbar-nav > li > a {
     color: #fff;
     font-weight: 900;
 }
 
-    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-        color: #000;
-        text-decoration: none;
-    }
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #000;
+    text-decoration: none;
+}
 
 .navbar-default {
-    background-color: #FF2276;
+    background-color: #4d636f;
     border-color: transparent;
 }
+
 /* ADDED PADDING IN NAVBAR */
 .navbar {
     padding: 15px;
@@ -103,14 +103,13 @@ padding:0px;
     -moz-transition: background .8s ease-out,padding .8s ease-out;
     transition: background .8s ease-out,padding .8s ease-out;
 }
+
 /* CLASS FOR REMOVING PADDING IN NAVBAR*/
 .navbar-pad-original {
     padding: 0px;
 }
 
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #000;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 4px;
@@ -118,11 +117,9 @@ padding:0px;
     -moz-border-radius: 4px;
 }
 
-
 /* =============================================================
   HEADER SECTION STYLES
  ============================================================ */
-
 #header {
     background: url(../img/home.jpg) no-repeat center center;
     padding: 0;
@@ -133,27 +130,26 @@ padding:0px;
     color: #fff;
 }
 
-    #header .overlay {
-        background-color: rgba(3, 3, 3, 0.8);
-        min-height: 700px;
-    }
+#header .overlay {
+    background-color: rgba(3, 3, 3, 0.8);
+    min-height: 700px;
+}
 
-    #header h1 {
-        line-height: 60px;
-        font-size: 45px;
-        font-weight: 900;
-        padding-top: 180px;
-        padding-bottom: 35px;
-        color: #FF2276;
-    }
+#header h1 {
+    line-height: 60px;
+    font-size: 45px;
+    font-weight: 900;
+    padding-top: 180px;
+    padding-bottom: 35px;
+    color: #94b4c5;
+}
 
-
-    #header h4 {
-        line-height: 30px;
-        font-size: 12px;
-        padding-bottom: 40px;
-        text-transform: uppercase;
-    }
+#header h4 {
+    line-height: 30px;
+    font-size: 12px;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+}
 
 /*================================
     SERVICES STYLES
@@ -162,20 +158,20 @@ padding:0px;
     background-color: rgba(237, 237, 237, 1);
 }
 
-    #services i {
-        font-size: 80px;
-        padding: 30px;
-        color: #FF2276;
-    }
+#services i {
+    font-size: 80px;
+    padding: 30px;
+    color: #4d636f;
+}
 
-    #services h4 {
-        padding-bottom: 5px;
-        padding-top: 15px;
-    }
+#services h4 {
+    padding-bottom: 5px;
+    padding-top: 15px;
+}
+
 /* =============================================================
   CLIENTS SECTION STYLES
  ============================================================ */
-
 #clients {
     background: url(../img/clients.jpg) no-repeat center center;
     padding: 0;
@@ -185,44 +181,45 @@ padding:0px;
     background-attachment: fixed;
 }
 
-    #clients .overlay {
-        background-color: rgba(0,0,0,0.7);
-        padding-top: 90px;
-        min-height: 300px;
-        color: #fff;
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
+#clients .overlay {
+    background-color: rgba(0,0,0,0.7);
+    padding-top: 90px;
+    min-height: 300px;
+    color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
 
 .clients-carousel {
-    margin-top: 50px; /*SMALL TOP MARGIN FOR SPACE */
+    margin-top: 50px;
+    /*SMALL TOP MARGIN FOR SPACE */
     padding: 0 30px 30px 30px;
 }
 
-    .clients-carousel .thumbnail {
-        border: 1px solid #FF2276;
-    }
+.clients-carousel .thumbnail {
+    border: 1px solid #FF2276;
+}
 
-    .clients-carousel .carousel-control.left {
-        height: 30px;
-        width: 25px;
-        margin-top: 45px;
-        background: #FF2276;
-        left: -15px;
-    }
+.clients-carousel .carousel-control.left {
+    height: 30px;
+    width: 25px;
+    margin-top: 45px;
+    background: #FF2276;
+    left: -15px;
+}
 
-    .clients-carousel .carousel-control.right {
-        height: 30px;
-        width: 25px;
-        margin-top: 45px;
-        background: #FF2276;
-        right: -15px;
-    }
+.clients-carousel .carousel-control.right {
+    height: 30px;
+    width: 25px;
+    margin-top: 45px;
+    background: #FF2276;
+    right: -15px;
+}
 
-    .clients-carousel img {
-        width: 100%;
-        height: 120px;
-    }
+.clients-carousel img {
+    width: 100%;
+    height: 120px;
+}
 
 #clients .thumbnail {
     background-color: transparent;
@@ -231,7 +228,6 @@ padding:0px;
 /* =============================================================
  PORTFOLIO SECTION STYLES
  ============================================================ */
-
 /* FOR CHANGING COLOR OF ACTIVE CATEGORY */
 .caegories a.active {
     background-color: #FF2276;
@@ -252,16 +248,21 @@ padding:0px;
 }
 
 #works img {
-    filter: gray; /* FOR IE6-9 */
-    -webkit-filter: grayscale(1); /* FOR Google Chrome, Safari 6+ and  Opera 15+ */
+    filter: gray;
+    /* FOR IE6-9 */
+    -webkit-filter: grayscale(1);
+    /* FOR Google Chrome, Safari 6+ and  Opera 15+ */
     opacity: 0.8;
 }
 
-    #works img:hover {
-        filter: none; /* FOR IE6-9 */
-        -webkit-filter: grayscale(0); /* FOR Google Chrome, Safari 6+ and  Opera 15+ */
-        opacity: 1;
-    }
+#works img:hover {
+    filter: none;
+    /* FOR IE6-9 */
+    -webkit-filter: grayscale(0);
+    /* FOR Google Chrome, Safari 6+ and  Opera 15+ */
+    opacity: 1;
+}
+
 /* =============================================================
   TESTIMONIAL SECTION STYLES
  ============================================================ */
@@ -274,14 +275,15 @@ padding:0px;
     background-attachment: fixed;
 }
 
-    #testimonial .overlay {
-        background-color: rgba(0,0,0,0.7);
-        padding-top: 90px;
-        min-height: 300px;
-        color: #fff;
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
+#testimonial .overlay {
+    background-color: rgba(0,0,0,0.7);
+    padding-top: 90px;
+    min-height: 300px;
+    color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
 /* =============================================================
   TEAM SECTION STYLES
  ============================================================ */
@@ -296,9 +298,10 @@ padding:0px;
     border: 2px solid #FF2276;
 }
 
-    .media img:hover {
-        opacity: 0.6;
-    }
+.media img:hover {
+    opacity: 0.6;
+}
+
 /* =============================================================
   CONTACT SECTION STYLES
  ============================================================ */
@@ -311,14 +314,15 @@ padding:0px;
     background-attachment: fixed;
 }
 
-    #contact .overlay {
-        background-color: rgba(0,0,0,0.9);
-        padding-top: 90px;
-        min-height: 300px;
-        color: #fff;
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
+#contact .overlay {
+    background-color: rgba(0,0,0,0.9);
+    padding-top: 90px;
+    min-height: 300px;
+    color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
 /* =============================================================
   FOOTER SECTION STYLES
  ============================================================ */
@@ -330,7 +334,7 @@ footer {
     background-color: rgba(237, 237, 237, 1);
 }
 
-    footer a, footer a:hover {
-        color: #000;
-        text-decoration: none;
-    }
+footer a, footer a:hover {
+    color: #000;
+    text-decoration: none;
+}

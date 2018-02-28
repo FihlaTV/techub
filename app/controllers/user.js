@@ -13,7 +13,7 @@ exports.user_list = function(req, res) {
     .exec(function (err, list_users) {
       if (err) { return next(err); }
       //Successful, so render
-      res.render('profileinstance.ejs', { title: 'Freelancers List', user_list: list_users });
+      res.render('profileinstance.ejs', { title: 'Freelancers List', user_list: list_users, user: req.user });
     });
 
 };

@@ -12,170 +12,152 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="/public/assets/css/load-more-button.css">
         <style>
-
-         .pagetitle {border-bottom:1px solid #cccccc; padding-bottom:30px; margin-bottom:30px;}
+            .pagetitle {
+                border-bottom: 1px solid #cccccc;
+                padding-bottom: 30px;
+                margin-bottom: 30px;
+            }
         </style>
     </head>
-<body>
-      
-<div class="row-fluid top30 pagetitle">
-  
-  <div class="container">
-    
-    <div class="row">
-      
-      <div class="col-md-12"><h1>Projects</h1></div>
-      
-      
-    </div>
-    
-  </div>
-  
-  
-  
-</div>
-<div class="container">
-  
-  
-  
-  
-  
-  <div class="row">
-    <div class="col-md-3">
-      
-      
-      <h4 class="">Search</h4>
-      
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-      <button type="button" class="btn btn-default btn-sm btn-block hidden-lg hidden-md" data-toggle="collapse" data-target="#demo">Refine your search <span class="caret"></span>
-        
-      </button>
-      
-      <div id="demo" class="collapse in">
-        <hr>
-        <div class="list-group list-group">
-          <h4 class="">Category</h4>
-          <a href="#" class="list-group-item"><span class="badge">14</span> Active item <span class="label label-primary">New</span></a>
-          <a href="#" class="list-group-item"><span class="badge">3</span> Second item</a>  
-          <a href="#" class="list-group-item"><span class="badge">25</span> Third item</a>
-          <a href="#" class="list-group-item"><span class="badge">14</span> Active item</a> 
-          <a href="#" class="list-group-item"><span class="badge">3</span> Second item</a>
-          <a href="#" class="list-group-item"><span class="badge">25</span> Third item</a> 
-          <a href="#" class="list-group-item"><span class="badge">14</span> Active item</a>
-          <a href="#" class="list-group-item"><span class="badge">3</span> Second item</a>
-          
-          <div id="categories" class="collapse">
-            
-            <a href="#" class="list-group-item"><span class="badge">14</span> Active item</a>
-            <a href="#" class="list-group-item"><span class="badge">3</span> Second item</a>
-            <a href="#" class="list-group-item"><span class="badge">25</span> Third item</a> 
-            <a href="#" class="list-group-item"><span class="badge">14</span> Active item</a>
-            <a href="#" class="list-group-item"><span class="badge">3</span> Second item</a>
-          </div>
-          
-          
-          <button class="btn btn-default btn-sm btn-block" data-toggle="collapse" data-target="#categories">More <span class="caret"></span></button>
-          
-          <hr class="">
-          <h4 class="">Viewing Options</h4>
-          <a href="#" class="list-group-item"><span class="badge">14</span> Upcoming Sessions</a>
-          
-          <a href="#" class="list-group-item"><span class="badge">3</span> OnDemand</a>
-          <hr class=""> 
-          <a href="#" class="list-group-item">Archived Courses</a>
-          <a href="#" class="list-group-item">Projects In Development</a>
-        </div>
-      </div>
-      
-      
-      
-    </div>
-    <div class="col-md-9">
-      
-      
-      <div class="well hidden-xs"> 
-        
-        <div class="row">
-          
-          <div class="col-xs-4">
-            
-            
-            <select class="form-control">
-              <option>Recently Added</option>
-              <option>Next Upcoming Session</option>
-              <option>A-Z</option>
-              <option>Z-A</option>
-            </select>
-          </div>
-          <div class="col-xs-8">
-            <div class="btn-group pull-right">
-              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-th"></span></button>
-              <button type="button" class="btn btn-default active"><span class="glyphicon glyphicon-th-list"></span></button>
-              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-list"></span></button>
-              
+    <body class="w3-theme-l5">
+              <div class="w3-top">
+            <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+                <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="/dashboard" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">
+                    <i class="fa fa-home w3-margin-right"></i>
+                    Logo
+                </a>
+                <a href="/user-profile/<%= user._id %>" class="w3-bar-item w3-button w3-hide-small w3-padding-16 w3-hover-white" title="Account Settings">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a href="/user-profile/msg/<%= user._id %>" class="w3-bar-item w3-button w3-hide-small w3-padding-16 w3-hover-white" title="Account Settings">
+                    <i class="fa fa-envelope"></i>
+                </a>
+                <a href="/logout" class=" w3-button w3-right w3-padding-16 w3-hover-white glyphicon glyphicon-log-out" title="Logout"></a>
             </div>
-          </div>
-          
         </div>
-        
-        
-        
-        
-        
-      </div>
-      
-      <hr>
-      
-      <% for (var project in project_list) { %>
-      <div class="row">
-        <div class="col-sm-4"><a href="#" class=""><img src="http://placehold.it/1280X720" class="img-responsive"></a>
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Inbox</a>
+            <a href="/user-profile/<%= user._id %>" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
         </div>
-        <div class="col-sm-8">
-          <h3 class="title"><%= project_list[project].title %></h3>
-          <p class="text-muted"><span class="glyphicon glyphicon-lock"></span><%= project_list[project].description %></p>
-          
-          <p class="text-muted">Presented by <a href="#"><% project_list[project].username %></a></p>
-          
+        <div class="row-fluid top30 pagetitle">
+            <div class="container w3-container w3-content">
+                <div class="w3-row">
+                    <div class="col-md-12">
+                        <h1>Projects</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <hr>
-      <% } %>
-      
-      
-      
-      
-      <ul class="pagination pagination-lg pull-right">
-        <li><a href="#">«</a></li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">»</a></li>
-      </ul>
-      
-      
-    </div>
-  </div>
-</div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
+        <div class="containe w3-container w3-content">
+            <div class="w3-row">
+                <div class="col-md-3">
+                    <h4 class="">Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default btn-sm btn-block hidden-lg hidden-md" data-toggle="collapse" data-target="#demo">
+                        Refine your search <span class="caret"></span>
+                    </button>
+                    <div id="demo" class="collapse in">
+                        <hr>
+                        <div class="list-group list-group">
+                            <h4 class="">Category</h4>
+                            <a href="#" class="list-group-item">
+                                <span class="badge">0</span>
+                                Active item <span class="label label-primary">New</span>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <span class="badge">0</span>
+                                Second item
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <span class="badge">0</span>
+                                Third item
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <span class="badge">0</span>
+                                Active item
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <span class="badge">0</span>
+                                Second item
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <span class="badge">0</span>
+                                Third item
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <span class="badge">0</span>
+                                Active item
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <span class="badge">0</span>
+                                Second item
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="well hidden-xs">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <select class="form-control">
+                                    <option>Recently Added</option>
+                                    <option>Next Upcoming Session</option>
+                                    <option>A-Z</option>
+                                    <option>Z-A</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="btn-group pull-right">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default active">
+                                        <span class="glyphicon glyphicon-th-list"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-list"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <ul class="pagination pagination-lg pull-right">
+                        <li>
+                            <a href="#">«</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">»</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+         <footer class="w3-container w3-theme-d3 w3-padding-16">
+            <h5>Footer</h5>
+        </footer>
     </body>
 </html>
-

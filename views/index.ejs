@@ -30,7 +30,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="/">
                         <img src="/public/assets/img/logo.png" alt=""/>
                     </a>
                 </div>
@@ -45,7 +45,10 @@
                         <li>
                             <a href="#contact">CONTACT</a>
                         </li>
-                        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large">SIGNUP</button>
+                        <li>
+                           <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue-grey w3-large">LOGIN</button> 
+                        </li>
+                        
                     </ul>
                 </div>
                 <div id="id01" class="w3-modal">
@@ -63,14 +66,14 @@
                                 <label>Password</label>
                                 <input type="password" class="form-control" name="password">
                             </div>
-                            <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                            <button type="submit" class="w3-button w3-blue-grey">Login</button>
                         </form>
                         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                            <button type="button" class="w3-button w3-red">
-                                <a href="/signup">SIGNUP</a>
-                            </button>
+                            <a href="/signup"><button type="button" class="w3-button w3-blue-grey">
+                                SIGNUP
+                            </button></a>
                             <span class="w3-right w3-padding w3-hide-small">
-                                 <a href="#">Forgot password?</a>
+                                <a href="#">Forgot password?</a>
                             </span>
                         </div>
                     </div>
@@ -84,30 +87,26 @@
         <div class="container">
             <div class="row scroll-me">
                 <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-center ">
-                    <h1 data-scroll-reveal="enter from the bottom after 0.2s">Time Fadeout,  Design Doesn't
-                        </h1>
-                    <h4 data-scroll-reveal="enter from the bottom after 0.4s">Morbi bibendum risus non nunc feugiat, quis venenatis augue fringilla. 
-                          Morbi vestibulum elit eget leo congue elementum.
-                           Aliquam at turpis urna. Nam pulvinar tincidunt posuere. 
-
-                        </h4>
-                    <a data-scroll-reveal="enter from the bottom after 0.6s" href="#" class="btn btn-danger set-bk-clr">Explore Awesomeness</a>
+                    <h1 data-scroll-reveal="enter from the bottom after 0.2s">
+                        Web platform for Employers and Job-seekers
+                    </h1>
+                    <h4 data-scroll-reveal="enter from the bottom after 0.4s">
+                           
+                    </h4>
+                    <a data-scroll-reveal="enter from the bottom after 0.6s" href="/signup" class="w3-button w3-blue-grey">Signup</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!--HEADER SECTION END  -->
-<section id="services">
+<!-- <section id="services">
     <div class="container">
         <div class="row text-center">
             <div class="col-md-6 col-md-offset-3 pad-bottom" data-scroll-reveal="enter from the bottom after 0.2s">
                 <h2>
-                    <strong>OUR SERVICES</strong>
+                    <strong>SERVICES</strong>
                 </h2>
-                Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae
-
-                
             
             </div>
         </div>
@@ -120,6 +119,7 @@
                 Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
                 
             
+            
             </div>
             <div class="col-md-3">
                 <i class="ion-card"></i>
@@ -128,6 +128,7 @@
                 </h4>
                 Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
                 
+            
             
             </div>
             <div class="col-md-3">
@@ -138,6 +139,7 @@
                 Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
                 
             
+            
             </div>
             <div class="col-md-3">
                 <i class="ion-ios-settings"></i>
@@ -146,6 +148,7 @@
                 </h4>
                 Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
                 
+            
             
             </div>
         </div>
@@ -158,6 +161,7 @@
                 Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
                 
             
+            
             </div>
             <div class="col-md-3">
                 <i class="ion-ios-pulse-strong"></i>
@@ -166,6 +170,7 @@
                 </h4>
                 Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
                 
+            
             
             </div>
             <div class="col-md-3">
@@ -176,6 +181,7 @@
                 Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
                 
             
+            
             </div>
             <div class="col-md-3">
                 <i class="ion-ios-people-outline"></i>
@@ -185,12 +191,13 @@
                 Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
                 
             
+            
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- SERVICES SECTION END  -->
-<div id="testimonial" data-scroll-reveal="enter from the bottom after 0.2s">
+<!-- <div id="testimonial" data-scroll-reveal="enter from the bottom after 0.2s">
     <div class="overlay">
         <div class="container">
             <div class="row text-center">
@@ -204,65 +211,32 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- TESTIMONIAL SECTION END  -->
 <!-- About Section -->
 <div class="w3-container" style="padding:128px 16px" id="about">
-    <h3 class="w3-center">ABOUT THE COMPANY</h3>
-    <p class="w3-center w3-large">Key features of our company</p>
-    <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <h3 class="w3-center">ABOUT THE APPLICATION</h3>
+    <p class="w3-center w3-large">Key features of the application</p>
+    <div class="w3-row-padding w3-center " style="margin-top:64px">
         <div class="w3-third">
-            <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-            <p class="w3-large">Responsive</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            <i class="fa fa-search w3-margin-bottom w3-jumbo w3-center" ></i>
+            <p class="w3-large">Find</p>
+            <p>Post a job or a project and find a freelancer/job-seeker to hire.</p>
         </div>
         <div class="w3-third">
-            <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">Passion</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            <i class="fa fa-address-card w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">Hire</p>
+            <p>Browse profile and hire the candidate for your job/project.</p>
         </div>
         <div class="w3-third">
-            <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">Design</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            <i class="fa fa-calendar-check-o w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">Work</p>
+            <p>Use the platform for projects/job related work.</p>
         </div>
     </div>
 </div>
-<section id="contact">
-    <div class="overlay">
-        <div class="container">
-            <div class="row text-center" data-scroll-reveal="enter from the bottom after 0.2s">
-                <div class="col-md-6 col-md-offset-3 pad-bottom">
-                    <h2>
-                        <strong>STAY CONNECTED </strong>
-                    </h2>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae
-
-                    
-                
-                </div>
-            </div>
-            <div class="row text-center" data-scroll-reveal="enter from the bottom after 0.4s">
-                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-                    <h3>
-                        <strong>Address : </strong>
-                    </h3>
-                    <br/>
-                    <h4>102, Melborne City International,</h4>
-                    <h4>United States </h4>
-                    <h4>
-                        <strong>Email : </strong>
-                        info@yourdomain.com
-                    
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- CONTACT SECTION END -->
 <footer>
-    &copy 2015 YourDomain.com  | <a href="http://www.designbootstrap.com/" target="_blank">by DesignBootstrap</a>
+    &copy 2018 techub01.herokuapp.com  | <a href="http://www.designbootstrap.com/" target="_blank">by DesignBootstrap</a>
 </footer>
 <!--FOOTER SECTION END  -->
 <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
